@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT" />
+  <meta charset="UTF-8">
+  <meta name="author" content="Afam Ilene @ Seposs Ltd">
+  <meta http-equiv="content-type" content="text/html">
+  <!--base href="file:///F:/CV/HomeOffice/NodeTestFiles/" target="_blank" -->
+  <base href="https://sitedev.afani.co.uk/" target="_blank">
+  <title>HMRC Node test </title>
+  <script src="hmrcNode/PokemonBase.js?version=1.0000"></script >
+<script src="hmrcNode/PokemonhtmlInterface.js?version=1.0000"></script >
+  </script >
+</head>
+<body onload="AcquireRemotePokemonData()">
+  <p>
+  <h2> How to use </h2>
+   Select a Pokemon name from the option provided if you are happy with the choice made use the find button to get a list of all the possible evolution path for the selected Pokemon. 
+  </p>
+  <p>
+  <label for="cars">Choose Pokemon:</label>
+  <select id="PokeMon_NameList_ID" name="Pokemon names">
+
+  </select><button onclick="FindPokemonEvolutionChain()">Find</button>
+  </p>
+  <p id="EvolutionChainEntry_ID">
+  </p>
+</body>
+</html>
