@@ -99,8 +99,6 @@ function FindPokemonSpecieEvolotionHistory(strPokemonName)
             let PokemonNameObjct = PokenmonNamelist.results[count];
             if(PokemonNameObjct.name === strPokemonName)
             {
-                // create evolution chain for the name
-                //alert(PokemonNameObjct.name);
                 strEvolutionChain = '{';
                 AddnameToSpecieChain(strPokemonName);
                 FindPokemonSpecie(strPokemonName, PokenmonSpecieslist);
@@ -122,7 +120,6 @@ function FindPokemonSpecie(strPokeMonName, SpecieListObj)
             if((count + 1) < SpecieListObj.results.length)
             {
                 ++vrVariationCounter;
-                //alert("count up");
                 let EvolvedSpecieObj = SpecieListObj.results[(count + 1)];
                 AddSpecieVariationToSpecieChain(EvolvedSpecieObj.name);
             }
@@ -137,9 +134,7 @@ function FindPokemonSpecie(strPokeMonName, SpecieListObj)
 function AddnameToSpecieChain(strName)
 {
     strEvolutionChain += '“name”:';
-    strEvolutionChain += strName;
-    //alert(strEvolutionChain);
-    //“name”: “caterpie”,  
+    strEvolutionChain += strName;  
 }
 
 function AddSpecieVariationToSpecieChain(strSpecieVariationName)
@@ -152,15 +147,12 @@ function AddSpecieVariationToSpecieChain(strSpecieVariationName)
         
         // find this variation evolution line
         FindPokemonSpecie(strSpecieVariationName, PokenmonSpecieslist);
-        //alert(strEvolutionChain);
     }
     else
     {
         strEvolutionChain += ',';
-        strEvolutionChain += '“variations”:[]';  
-        //strEvolutionChain += '}]'; 
+        strEvolutionChain += '“variations”:[]';   
     }
-    //“name”: “caterpie”,  
 }
 
 function PopulatePokemonNameUIcntrl()
@@ -175,7 +167,7 @@ function PopulatePokemonNameUIcntrl()
     }
     else
     {
-        alert("Unable to acquire pokemon data from remote source");
+        alert("Unable to acquire pokemon data from remote source, make sure your internet is enabled");
     }
   
 }
@@ -188,7 +180,6 @@ function AcquireRemotePokemonData()
 
 function EvolutionHistoryResult()
 {
-    //alert(strEvolutionChain);
     var x = document.getElementById(cnstEvolutionDisplayCntr_ID).innerHTML = strEvolutionChain;
 }
 
@@ -196,8 +187,7 @@ function FindPokemonEvolutionChain()
 {
     vrVariationCounter = 0;
     var x = document.getElementById(cnstPokemonNameSlctCntr_ID).selectedIndex;
-    var y = document.getElementById(cnstPokemonNameSlctCntr_ID).options;
-    //alert("Index: " + y[x].index + " is " + y[x].text);    
+    var y = document.getElementById(cnstPokemonNameSlctCntr_ID).options;    
     
     FindPokemonSpecieEvolotionHistory(y[x].text);
     EvolutionHistoryResult();
