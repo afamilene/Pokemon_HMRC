@@ -16,3 +16,5 @@ Deployment and release will be best if done online, sending out install link, pl
 Versioning and management primarily will depend on company policy, there are quite a number of facilities available providing versioning and management services there are also DIY tools that does same each with built in pros and cons.
 
 Requirements, non-function arise from specification and use case for me to make any meaningful contribution will have to generate the afore mentioned time has not allowed for it.
+
+Files include: index.htm, PokemonBase.js, and PokemonhtmlInterface.js
